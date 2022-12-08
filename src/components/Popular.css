@@ -1,0 +1,30 @@
+img {
+    height: 200px;
+    width: 200px;
+}
+
+.ingre {
+    display: inline-block;
+    border: solid;
+    border-color: grey;
+    padding: 2px;
+    margin: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black
+}
+
+
+.ingre:hover {
+    background-color: lightblue;
+    border-color: blueviolet
+}
+
+.nobullet {
+    list-style-type: none;
+    padding-left: 0.1em
+}
+
+.popup {
+    text-align: left;
+    padding: 1em
+}
