@@ -6,7 +6,7 @@ function Popular() {
   const [movieData, setMovieData] = useState([]);
 
   useEffect(() => {
-    const movieUrl = `https://imdb-api.com/en/API/SearchMovie/k_91dc2llz/fast`;
+    const movieUrl = `https://dull-teal-penguin-tie.cyclic.app/title`;
     const makeApiCall = async () => {
       let res = await fetch(movieUrl);
       let data = await res.json();
@@ -19,7 +19,7 @@ function Popular() {
   const popResult = movieData.map((item, index) => {
     return (
       <div className="popular">
-        <img key={item.id} alt="display" src={item.image} />
+        <img key={item.movieID} alt="display" src={item.image} />
         <div className="instruction">
           <a>{item.title}</a>
         </div>
