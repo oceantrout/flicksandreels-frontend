@@ -10,8 +10,8 @@ function Popular() {
     const makeApiCall = async () => {
       let res = await fetch(movieUrl);
       let data = await res.json();
-      setMovieData(data.results);
-      console.log("API is successful");
+      setMovieData(data);
+      console.log("API is successful", data);
     };
     makeApiCall();
   }, []);
@@ -19,9 +19,11 @@ function Popular() {
   const popResult = movieData.map((item, index) => {
     return (
       <div className="popular">
-        <img key={item.movieID} alt="display" src={item.image} />
+        <img key={item.movieId} alt="display" src={item.image} />
         <div className="instruction">
           <a>{item.title}</a>
+          <br></br>
+          <a>{item.plot}</a>
         </div>
       </div>
     );
