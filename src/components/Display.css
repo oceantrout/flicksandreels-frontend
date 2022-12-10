@@ -1,32 +1,28 @@
-.popular {
-    display: flex;
+.divResult{
+    display: inline-block;
+    height: 50vw;
+        width:3000px;
+}
+.result {
+    display: block;
+    height: 40vw;
+    width: 250px;
     border: solid;
-    border-color: green;
+    border-color: blue;
     padding: 2px;
-    margin: 0.5em;
+    margin: 1em;
     font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    font-size: small;
+    color: black
 }
 
-
-.popular:hover {
+.result:hover {
     background-color: lightblue;
     border-color: red
 }
 
-.name {
-    background-color: beige;
-    min-width: 200px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 0.5em
-}
-
-.instruction {
-    background-color: blanchedalmond;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    width: fill;
-    padding: 1em
+img {
+    height: 20vw;
+    width: 15vw
 }
 
 h2 {
@@ -36,13 +32,4 @@ h2 {
     color: white;
     padding: 0.5em;
     margin: 0
-}
-
-span {
-    font-size: medium
-}
-
-.nobullet {
-    list-style-type: none;
-    padding-left: 0.1em
 }
