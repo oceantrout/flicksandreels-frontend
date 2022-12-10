@@ -1,4 +1,5 @@
 .App {
+  display: block;
   text-align: center;
   font-family: "Sofia", sans-serif;
   background-color: black;
@@ -9,8 +10,3 @@ h2 {
   text-align: center
 }
 
-.arrange {
-  display: flex;
-  padding: 0;
-  margin: 0
-}

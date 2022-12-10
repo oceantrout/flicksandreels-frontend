@@ -1,12 +1,12 @@
 import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import "./Popular.css";
+import "./Display.css";
 function Popular() {
   const [movieData, setMovieData] = useState([]);
 
   useEffect(() => {
-    const movieUrl = `https://dull-teal-penguin-tie.cyclic.app/title`;
+    const movieUrl = `https://graceful-hoodie-deer.cyclic.app/title`;
     const makeApiCall = async () => {
       let res = await fetch(movieUrl);
       let data = await res.json();
@@ -16,11 +16,11 @@ function Popular() {
     makeApiCall();
   }, []);
 
-  const popResult = movieData.map((item, index) => {
+  const movieResult = movieData.map((item, index) => {
     return (
-      <div className="popular">
+      <div className="result">
         <img key={item.movieId} alt="display" src={item.image} />
-        <div className="instruction">
+        <div className="text">
           <a>{item.title}</a>
           <br></br>
           <a>{item.plot}</a>
@@ -39,7 +39,7 @@ function Popular() {
           <button>Popular</button>
         </Link>
       </nav>
-      <div>{popResult}</div>
+      <div className="divResult">{movieResult}</div>
     </>
   );
 }
