@@ -21,7 +21,7 @@ function Home() {
         <Card.Img
           variant="top"
           src="/img2.png"
-          style={{ opacity: 1, height: "200px" }}
+          style={{ opacity: 0.8, height: "200px" }}
         />
         <Card.Body>
           <Card.Text>Click for free information</Card.Text>
@@ -47,7 +47,7 @@ function Home() {
         <Card.Img
           variant="top"
           src="/img3.png"
-          style={{ opacity: 1, height: "200px" }}
+          style={{ opacity: 0.8, height: "200px" }}
         />
         <Card.Body>
           <Card.Text>Registered User Only</Card.Text>
