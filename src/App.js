@@ -2,10 +2,14 @@ import "./App.css";
 import Home from "./components/Home";
 import Display from "./components/Display";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Register from "./components/Register";
+import Login from "./components/Login";
 import Popular from "./components/Popular";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Route, Switch } from "react-router-dom";
+import { AuthProvider } from "./components/context/AuthProvider";
+
 function App() {
   return (
     <Switch>
@@ -20,7 +24,15 @@ function App() {
         <Popular />
       </Route>
       <Route path="/Display">
-        <Display />
+        <AuthProvider>
+          <Display />
+        </AuthProvider>
+      </Route>
+      <Route path="/Login">
+        <Login />
+      </Route>
+      <Route path="/Register">
+        <Register />
       </Route>
     </Switch>
   );
