@@ -23,12 +23,10 @@ function Home() {
           style={{ opacity: 0.3, height: "200px" }}
         />
         <Card.Body>
-          <Card.Text>
-            You can view what are the most popular movie titles this week
-          </Card.Text>
+          <Card.Text>Click for free information</Card.Text>
           <Link to="/Popular">
             <Button variant="primary" size="lg">
-              Top 20 most popular movie this week
+              Random movie selection
             </Button>
           </Link>{" "}
         </Card.Body>
@@ -50,11 +48,8 @@ function Home() {
           style={{ opacity: 0.3, height: "200px" }}
         />
         <Card.Body>
-          <Card.Text>
-            You can explore the movie titles and add comment, but this function
-            is only for registered users
-          </Card.Text>
-          <Link to="/Display">
+          <Card.Text>Registered User Only</Card.Text>
+          <Link to="/Login">
             <Button variant="primary" size="lg">
               Movie title and reviews
             </Button>
