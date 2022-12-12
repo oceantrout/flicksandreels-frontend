@@ -28,13 +28,10 @@ function Popular() {
   });
   return (
     <>
-      <h2>Movie that available </h2>
+      <h2>Randon Movie Selection </h2>
       <nav>
         <Link to="/">
           <button>Home Page</button>
-        </Link>
-        <Link to="/Search">
-          <button>Search</button>
         </Link>
       </nav>
       <div>{popResult}</div>

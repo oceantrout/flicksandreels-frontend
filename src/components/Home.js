@@ -13,14 +13,15 @@ function Home() {
           height: "400px",
           opacity: 0.8,
           margin: "100px",
-          marginLeft: "350px",
-          color: "grey",
+          marginLeft: "150px",
+          color: "black",
+          fontfamily: "Nunito",
         }}
       >
         <Card.Img
           variant="top"
           src="/img2.png"
-          style={{ opacity: 0.3, height: "200px" }}
+          style={{ opacity: 0.8, height: "200px" }}
         />
         <Card.Body>
           <Card.Text>Click for free information</Card.Text>
@@ -39,13 +40,14 @@ function Home() {
           margin: "100px",
           marginLeft: "150px",
           opacity: 0.8,
-          color: "grey",
+          color: "black",
+          fontfamily: "Nunito",
         }}
       >
         <Card.Img
           variant="top"
           src="/img3.png"
-          style={{ opacity: 0.3, height: "200px" }}
+          style={{ opacity: 0.8, height: "200px" }}
         />
         <Card.Body>
           <Card.Text>Registered User Only</Card.Text>
