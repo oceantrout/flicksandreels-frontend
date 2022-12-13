@@ -70,7 +70,7 @@ function Popular() {
   });
   return (
     <>
-      <h2>Randon Movie Selection </h2>
+      <h2>Lastest Movie in 2022 </h2>
       <nav>
         <Link to="/">
           <button>Home Page</button>
