@@ -21,7 +21,7 @@ function Popular() {
       <div className="result">
         <img key={item.movieId} alt="display" src={item.image} />
         <div className="text">
-          <a>{item.title}</a>
+          <h6>{item.title}</h6>
           <br></br>
           <a>{item.plot}</a>
         </div>
@@ -36,10 +36,10 @@ function Popular() {
           <button>Home Page</button>
         </Link>
         <Link to="/Popular">
-          <button>Popular</button>
+          <button>Latest in 2022</button>
         </Link>
       </nav>
-      <div className="divResult">{movieResult}</div>
+      <div className="divResult"> {movieResult}</div>
     </>
   );
 }

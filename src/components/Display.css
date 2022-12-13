@@ -1,28 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 .divResult{
-    display: inline-block;
-    height: 50vw;
-        width:300gt0px;
+    display: flex;
+        flex-wrap: wrap;
+
 }
 .result {
     display: block;
-    height: 40vw;
-    width: 250px;
+    height: auto;
+    width: 20vw;
     border: solid;
     border-color: blue;
     padding: 2px;
     margin: 1em;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: black
 }
 
 .result:hover {
-    background-color: lightblue;
+    background-color: grey;
     border-color: red
 }
 
 img {
-    height: 20vw;
-    width: 15vw
+    padding: 0.5em;    height: auto;
+    width: 20vw
 }
 
 h2 {
@@ -32,4 +34,10 @@ h2 {
     color: white;
     padding: 0.5em;
     margin: 0
+}
+
+.text {
+font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+        padding: 0.5em;
 }
