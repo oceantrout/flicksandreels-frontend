@@ -35,10 +35,10 @@ function Popular() {
         end_year: "2023",
         min_imdb: "7",
         //max_imdb: "10",
-        //genre: "action",
+        // genre: "action" || "comedy",
         language: "english",
         type: "movie",
-        sort: "latest",
+        sort: "highestrated",
         // page: "1",
       },
       headers: {
@@ -62,8 +62,8 @@ function Popular() {
       <div className="result">
         <img key={item.imbid} alt="Image Not Available" src={item.imageurl} />
         <h6>{item.title}</h6>
-        <h6>{item.genre}</h6>
-        <h6>{item.released}</h6>
+        <h8>{item.genre}</h8>
+        <br></br>
         <a>{item.synopsis}</a>
       </div>
     );
