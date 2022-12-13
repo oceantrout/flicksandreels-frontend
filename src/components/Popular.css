@@ -1,30 +1,42 @@
-img {
-    height: 200px;
-    width: 200px;
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+.divResult {
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
-.ingre {
-    display: inline-block;
+.result {
+    display: block;
+    height: auto;
+    width: 20vw;
     border: solid;
-    border-color: grey;
+    border-color: blue;
     padding: 2px;
     margin: 1em;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: black
 }
 
-
-.ingre:hover {
-    background-color: lightblue;
-    border-color: blueviolet
+.result:hover {
+    background-color: grey;
+    border-color: red
 }
 
-.nobullet {
-    list-style-type: none;
-    padding-left: 0.1em
+img {
+    padding: 0.5em;
+    height: 22vw;
+    width: 20vw
 }
 
-.popup {
-    text-align: left;
-    padding: 1em
+h6 {
+    text-align: center;
+    padding: 0.5em;
+    margin: 0
+}
+
+a{
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    padding: 0.5em;
 }

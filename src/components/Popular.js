@@ -1,28 +1,70 @@
 import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 import "./Popular.css";
 function Popular() {
   const [movieData, setMovieData] = useState([]);
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "5362c3f347msh0ada21d8be2ead9p16bc15jsn41c00b1e2f1f",
+      "X-RapidAPI-Host": "ott-details.p.rapidapi.com",
+    },
+  };
 
   useEffect(() => {
-    const movieUrl = `https://imdb-api.com/en/API/SearchMovie/k_91dc2llz/fast`;
-    const makeApiCall = async () => {
-      let res = await fetch(movieUrl);
-      let data = await res.json();
-      setMovieData(data.results);
-      console.log("API is successful");
+    //const movieUrl = `https://imdb-api.com/en/API/SearchMovie/k_91dc2llz/fast`;
+    // const makeApiCall = async () => {
+    //   let res = await fetch(movieUrl);
+    //   let data = await res.json();
+    //   setMovieData(data.results);
+    //   console.log("API is successful");}
+    // const movieUrl = `https://ott-details.p.rapidapi.com/getnew?region=US`;
+    // const makeApiCall = async () => {
+    //   let res = await fetch(movieUrl, options);
+    //   let data = await res.json();
+    //   setMovieData(data.results);
+    //   console.log("API is successful");
+    // };
+    // makeApiCall();
+    const options = {
+      method: "GET",
+      url: "https://ott-details.p.rapidapi.com/advancedsearch",
+      params: {
+        start_year: "2022",
+        end_year: "2023",
+        min_imdb: "7",
+        //max_imdb: "10",
+        //genre: "action",
+        language: "english",
+        type: "movie",
+        sort: "latest",
+        // page: "1",
+      },
+      headers: {
+        "X-RapidAPI-Key": "5362c3f347msh0ada21d8be2ead9p16bc15jsn41c00b1e2f1f",
+        "X-RapidAPI-Host": "ott-details.p.rapidapi.com",
+      },
     };
-    makeApiCall();
+
+    axios
+      .request(options)
+      .then(function (response) {
+        setMovieData(response.data.results);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
   }, []);
 
   const popResult = movieData.map((item, index) => {
     return (
-      <div className="popular">
-        <img key={item.id} alt="display" src={item.image} />
-        <div className="instruction">
-          <a>{item.title}</a>
-        </div>
+      <div className="result">
+        <img key={item.imbid} alt="Image Not Available" src={item.imageurl} />
+        <h6>{item.title}</h6>
+        <h6>{item.genre}</h6>
+        <h6>{item.released}</h6>
+        <a>{item.synopsis}</a>
       </div>
     );
   });
@@ -34,7 +76,7 @@ function Popular() {
           <button>Home Page</button>
         </Link>
       </nav>
-      <div>{popResult}</div>
+      <div className="divResult">{popResult}</div>
     </>
   );
 }
