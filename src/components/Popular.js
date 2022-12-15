@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import Button from "react-bootstrap/Button";
 import "./Popular.css";
 function Popular() {
   const [movieData, setMovieData] = useState([]);
@@ -73,7 +73,7 @@ function Popular() {
       <h2>Lastest Movie in 2022 </h2>
       <nav>
         <Link to="/">
-          <button>Home Page</button>
+          <Button>Home Page</Button>
         </Link>
       </nav>
       <div className="divResult">{popResult}</div>

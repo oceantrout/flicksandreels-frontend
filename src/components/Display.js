@@ -2,6 +2,7 @@ import { React, useEffect, useState, useContext } from "react";
 import { useLocalStorage } from "@har4s/use-local-storage";
 import { Link } from "react-router-dom";
 import AuthContext from "./context/AuthProvider";
+import Button from "react-bootstrap/Button";
 
 import "./Display.css";
 function Display() {
@@ -63,12 +64,12 @@ function Display() {
       <h2>Movie that available </h2>
       <nav>
         <Link to="/">
-          <button>Home Page</button>
+          <Button>Home Page</Button>
         </Link>
         <Link to="/Popular">
-          <button>Popular</button>
+          <Button>Popular</Button>
         </Link>
-        <button onClick={handleSignOut}>Sign Out </button>
+        <Button onClick={handleSignOut}>Sign Out </Button>
       </nav>
       <div className="divResult">{movieResult}</div>
     </>
