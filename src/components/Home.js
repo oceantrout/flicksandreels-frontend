@@ -12,8 +12,9 @@ function Home() {
           width: "300px",
           height: "400px",
           opacity: 0.8,
-          margin: "100px",
+          marginRight: "100px",
           marginLeft: "150px",
+          marginBottom: "200px",
           color: "black",
           fontfamily: "Nunito",
         }}
@@ -37,8 +38,9 @@ function Home() {
         style={{
           width: "300px",
           height: "400px",
-          margin: "100px",
+          marginRight: "100px",
           marginLeft: "150px",
+          marginBottom: "200px",
           opacity: 0.8,
           color: "black",
           fontfamily: "Nunito",
