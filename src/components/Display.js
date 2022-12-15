@@ -19,8 +19,9 @@ function Display() {
       setMovieData(data);
       console.log("API is successful", data);
     };
-    if (uid === null) {
-      alert("You have no access");
+
+    if (!uid) {
+      window.alert("You have no access");
       return;
     } else {
       makeApiCall();
@@ -53,8 +54,10 @@ function Display() {
     )
       .then((response) => response.text())
       .then((result) => {
-        console.log(result);
+        console.log(result, "logoout success");
         setUid(null);
+        setMovieData([]);
+        window.alert("You have signed out");
       })
       .catch((error) => console.log("error", error));
   };
@@ -67,9 +70,11 @@ function Display() {
           <Button>Home Page</Button>
         </Link>
         <Link to="/Popular">
-          <Button>Popular</Button>
+          <Button variant="info">Popular</Button>
         </Link>
-        <Button onClick={handleSignOut}>Sign Out </Button>
+        <Button variant="warning" onClick={handleSignOut}>
+          Sign Out{" "}
+        </Button>
       </nav>
       <div className="divResult">{movieResult}</div>
     </>
