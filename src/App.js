@@ -14,8 +14,24 @@ function App() {
     <Switch>
       <Route exact path="/">
         <div className="App">
-          <h1>- - - - -Flicks & Reels- - - - -</h1>
-          <h5>a site for movie connoisseur</h5>
+          <ul>
+            <li>F</li>
+            <li>L</li>
+            <li>I</li>
+            <li>C</li>
+            <li>K</li>
+            <li>S</li>
+            <li>&</li>
+            <li>R</li>
+            <li>E</li>
+            <li>E</li>
+            <li>L</li>
+            <li>S</li>
+          </ul>
+          <h4 class="font-effect-shadow-multiple">
+            a site for movie connoisseur
+          </h4>
+
           <Home />
         </div>
       </Route>

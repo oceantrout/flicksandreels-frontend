@@ -24,10 +24,10 @@ function Home() {
           style={{ opacity: 0.8, height: "200px" }}
         />
         <Card.Body>
-          <Card.Text>Click for information without login</Card.Text>
+          <Card.Text>Latest Movie in 2022</Card.Text>
           <Link to="/Popular">
             <Button variant="primary" size="lg">
-              Latest Movie in 2022
+              Try for FREE
             </Button>
           </Link>{" "}
         </Card.Body>
@@ -50,10 +50,10 @@ function Home() {
           style={{ opacity: 0.8, height: "200px" }}
         />
         <Card.Body>
-          <Card.Text>Titles and Review Registered User Only</Card.Text>
+          <Card.Text> Movie title and reviews</Card.Text>
           <Link to="/Login">
             <Button variant="primary" size="lg">
-              Movie title and reviews
+              Sign-in to contribute
             </Button>
           </Link>{" "}
         </Card.Body>
