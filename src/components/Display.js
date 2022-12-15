@@ -1,19 +1,29 @@
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useState, useContext } from "react";
+import { useLocalStorage } from "@har4s/use-local-storage";
 import { Link } from "react-router-dom";
+import AuthContext from "./context/AuthProvider";
 
 import "./Display.css";
-function Popular() {
+function Display() {
   const [movieData, setMovieData] = useState([]);
-
+  const { auth } = useContext(AuthContext);
+  const [uid, setUid] = useLocalStorage("UID");
   useEffect(() => {
+    console.log("CHECK", uid);
     const movieUrl = `https://graceful-hoodie-deer.cyclic.app/title`;
+
     const makeApiCall = async () => {
       let res = await fetch(movieUrl);
       let data = await res.json();
       setMovieData(data);
       console.log("API is successful", data);
     };
-    makeApiCall();
+    if (uid === null) {
+      alert("You have no access");
+      return;
+    } else {
+      makeApiCall();
+    }
   }, []);
 
   const movieResult = movieData.map((item, index) => {
@@ -21,13 +31,33 @@ function Popular() {
       <div className="result">
         <img key={item.movieId} alt="display" src={item.image} />
         <div className="text">
-          <h6>{item.title}</h6>
+          <a>{item.title}</a>
           <br></br>
           <a>{item.plot}</a>
         </div>
       </div>
     );
   });
+
+  const handleSignOut = async (e) => {
+    e.preventDefault();
+    var requestOptions = {
+      method: "POST",
+      redirect: "follow",
+    };
+
+    fetch(
+      "https://graceful-hoodie-deer.cyclic.app/auth/signout",
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => {
+        console.log(result);
+        setUid(null);
+      })
+      .catch((error) => console.log("error", error));
+  };
+
   return (
     <>
       <h2>Movie that available </h2>
@@ -36,12 +66,13 @@ function Popular() {
           <button>Home Page</button>
         </Link>
         <Link to="/Popular">
-          <button>Latest in 2022</button>
+          <button>Popular</button>
         </Link>
+        <button onClick={handleSignOut}>Sign Out </button>
       </nav>
-      <div className="divResult"> {movieResult}</div>
+      <div className="divResult">{movieResult}</div>
     </>
   );
 }
 
-export default Popular;
+export default Display;
