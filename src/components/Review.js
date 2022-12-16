@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ShowMoreText from "react-show-more-text";
+import Button from "react-bootstrap/Button";
 import Form from "./Form";
 import "./Review.css";
 
@@ -83,11 +84,14 @@ function Review() {
       <h2>Movie Reviews</h2>
       <nav>
         <Link to="/">
-          <button>Home Page</button>
+          <Button>Home Page</Button>
         </Link>
         <Link to="/Popular">
-          <button>Popular</button>
+          <Button variant="info">Popular</Button>
         </Link>
+        {/* <Button variant="warning" onClick={handleSignOut}>
+          Sign Out{" "}
+        </Button> */}
       </nav>
       <div className="container">
         <div className="section">
@@ -101,10 +105,10 @@ function Review() {
             <h5>{title.plot}</h5>
           </div>
           <div className="subsection">
-          <h4>Reviews</h4>
+            <h4>Reviews</h4>
             {reviewData?.items?.length > 0 ? <ReviewResult /> : null}
-          <h4>Add a Review</h4>
-          <Form onHandleSubmit={handleSubmitFromChild} />
+            <h4>Add a Review</h4>
+            <Form onHandleSubmit={handleSubmitFromChild} />
           </div>
         </div>
       </div>
