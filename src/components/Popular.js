@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import "./Popular.css";
+
 function Popular() {
   const [movieData, setMovieData] = useState([]);
   const options = {

@@ -11,6 +11,7 @@ function Display() {
   const { auth } = useContext(AuthContext);
   const [uid, setUid] = useLocalStorage("UID");
   let history = useHistory();
+  let clientTime = new Date().toLocaleString();
 
   useEffect(() => {
     console.log("CHECK", uid);
@@ -23,8 +24,13 @@ function Display() {
       console.log("API is successful", data);
     };
 
-    if (!uid) {
+    if (window.localStorage.getItem("UID") === "null") {
       window.alert("You have no access");
+      setMovieData([]);
+      setTimeout(() => {
+        history.push("./");
+      }, 500);
+
       return;
     } else {
       makeApiCall();
@@ -71,7 +77,10 @@ function Display() {
 
   return (
     <>
-      <h2>Movie that available </h2>
+      <h2>Movies for review </h2>
+      <span>
+        Currentl logged user: {uid}, {clientTime}
+      </span>
       <nav>
         <Link to="/">
           <Button>Home Page</Button>
