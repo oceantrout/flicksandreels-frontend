@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+}
+
+p {
+    font-size: 12px;
+}
+
+.section {
+    margin: 1em;
+    padding: 0.5em;
+    display: block;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+img {
+    width: 400px;
+    height: auto;
+    text-align: center;
+}
+
+.subsection {
+    margin: 1em;
+}
