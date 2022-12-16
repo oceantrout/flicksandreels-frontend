@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Popular from "./components/Popular";
-import Review from "./components/Review";
+//import Review from "./components/Review";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Route, Switch } from "react-router-dom";
@@ -48,9 +48,9 @@ function App() {
       <Route path="/Register">
         <Register />
       </Route>
-      <Route path="/Review">
+      {/* <Route path="/Review">
         <Review />
-      </Route>
+      </Route> */}
     </Switch>
   );
 }

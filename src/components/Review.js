@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ShowMoreText from "react-show-more-text";
 import Button from "react-bootstrap/Button";
 import Form from "./Form";
-import "./Review.css";
+//import "./Review.css";
 
 function Review() {
   const [reviewData, setReviewData] = useState({});
