@@ -27,11 +27,11 @@ img {
     width: 15vw
 }
 
-h2 {
+h2{
     text-align: center;
-    font-family: "Sofia", sans-serif;
-    background-color: black;
-    color: white;
+    font-family: 'Nunito', sans-serif;
+        background-image: linear-gradient(pink, white);    background-color: black;
+    color: black;
     padding: 0.5em;
     margin: 0
 }
@@ -40,4 +40,9 @@ h2 {
 font-family: 'Nunito', sans-serif;
     font-size: 15px;
         padding: 0.5em;
+}
+
+span{
+    text-align: center;
+        font-family: 'Nunito', sans-serif;
 }

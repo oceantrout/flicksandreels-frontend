@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect, useContext } from "react";
 import { useLocalStorage } from "@har4s/use-local-storage";
-import AuthContext from "./context/AuthProvider";
+//import AuthContext from "./context/AuthProvider";
 import "./Login.css";
 const Login = () => {
-  const { setAuth } = useContext(AuthContext);
+  // const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
 
@@ -46,9 +46,9 @@ const Login = () => {
       )
         .then((response) => response.json())
         .then((result) => {
-          console.log("result", result?.user?.uid ? result.user.uid : null);
-          setAuth({ uid: result?.user?.uid ? result.user.uid : null });
-          setUid(result?.user?.uid ? result.user.uid : null);
+          console.log("result", result?.user?.email ? result.user.email : null);
+          //setAuth({ uid: result?.user?.uid ? result.user.uid : null });
+          setUid(result?.user?.email ? result.user.email : null);
           setSuccess(true);
         })
         .catch((error) => console.log("error", error));
