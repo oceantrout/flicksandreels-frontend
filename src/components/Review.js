@@ -68,11 +68,12 @@ function Review() {
     let copyReviewData = { ...reviewData }; // Need to clone data when you want to change the state
     copyReviewData.items.push(val);
     setReviewData(copyReviewData);
+    console.log(copyReviewData.items);
 
     // This will send a post request to update the data in the database
     await fetch("https://graceful-hoodie-deer.cyclic.app/review/update/tt1535109", {
       method: "PUT",
-      body: JSON.stringify(copyReviewData.items),
+      body: JSON.stringify(val),
       headers: {
         "Content-Type": "application/json",
       },
