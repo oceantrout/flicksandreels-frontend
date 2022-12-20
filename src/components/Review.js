@@ -20,7 +20,7 @@ function Review() {
   }, []);
 
   useEffect(() => {
-    const reviewUrl = `https://graceful-hoodie-deer.cyclic.app/review/tt1535109`;
+    const reviewUrl = `https://graceful-hoodie-deer.cyclic.app/review/find/tt1535109`;
     fetch(reviewUrl)
       .then((res) => res.json())
       .then((data) => {
@@ -70,7 +70,7 @@ function Review() {
     setReviewData(copyReviewData);
 
     // This will send a post request to update the data in the database
-    await fetch("https://graceful-hoodie-deer.cyclic.app/review/tt1535109", {
+    await fetch("https://graceful-hoodie-deer.cyclic.app/review/find/tt1535109", {
       method: "PUT",
       body: JSON.stringify(copyReviewData.items),
       headers: {
