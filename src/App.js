@@ -9,6 +9,7 @@ import Review from "./components/Review";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Route, Switch } from "react-router-dom";
+import { faWindowRestore } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   return (
@@ -48,7 +49,7 @@ function App() {
       <Route path="/Register">
         <Register />
       </Route>
-      <Route path="/Review">
+      <Route path="/Review/:movieId">
         <Review />
       </Route>
     </Switch>

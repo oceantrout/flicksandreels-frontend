@@ -10,9 +10,11 @@ function Display() {
   const [movieData, setMovieData] = useState([]);
   const { auth } = useContext(AuthContext);
   const [uid, setUid] = useLocalStorage("UID");
+  //const [movieID, setMovieId] = useLocalStorage("movieID");
+
   let history = useHistory();
   let clientTime = new Date().toLocaleString();
-
+  //setMovieId("");
   useEffect(() => {
     console.log("CHECK", uid);
     const movieUrl = `https://graceful-hoodie-deer.cyclic.app/title`;
@@ -39,12 +41,20 @@ function Display() {
 
   const movieResult = movieData.map((item, index) => {
     return (
-      <div className="result">
+      <div
+        className="result"
+        // onClick={() => {
+        //   history.push("/review");
+        //   localStorage.setItem("movieID", item.movieId);
+        //}}
+      >
         <img key={item.movieId} alt="display" src={item.image} />
         <div className="text">
           <a>{item.title}</a>
           <br></br>
           <a>{item.plot}</a>
+          <br></br>
+          <Button href={"/review/" + item.movieId}>Add Review</Button>
         </div>
       </div>
     );
