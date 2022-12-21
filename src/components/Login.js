@@ -75,7 +75,7 @@ const Login = () => {
           <h1>You are logged in!</h1>
           <br />
           <p>
-            <a href="/Display">Go to the fun page</a>
+            <a href="/Display">Click here to proceed</a>
           </p>
         </section>
       ) : (
@@ -108,14 +108,14 @@ const Login = () => {
               value={pwd}
               required
             />
-            <button>Sign In</button>
+            <button>Log me in</button>
           </form>
           <p>
-            Need an Account?
+            <a>First time user?</a>
             <br />
             <span className="line">
               {/*put router link here*/}
-              <a href="/Register">Sign Up</a>
+              <a href="/Register">Create an account</a>
             </span>
           </p>
         </section>

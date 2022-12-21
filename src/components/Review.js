@@ -17,6 +17,7 @@ function Review() {
   console.log("The movie ID is ", movieID);
   useEffect(() => {
     const titleUrl = `https://graceful-hoodie-deer.cyclic.app/title/${movieID}`;
+    console.log(titleUrl);
     fetch(titleUrl)
       .then((res) => res.json())
       .then((data) => {

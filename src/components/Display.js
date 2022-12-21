@@ -50,12 +50,14 @@ function Display() {
       >
         <img key={item.movieId} alt="display" src={item.image} />
         <div className="text">
-          <a>{item.title}</a>
+          <strong>{item.title}</strong>
           <br></br>
           <a>{item.plot}</a>
           <br></br>
-          <Button href={"/review/" + item.movieId}>Add Review</Button>
         </div>
+        <Button className="reviewButton" href={"/review/" + item.movieId}>
+          Add Review
+        </Button>
       </div>
     );
   });
