@@ -1,6 +1,9 @@
 import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ShowMoreText from "react-show-more-text";
+import { useLocalStorage } from "@har4s/use-local-storage";
+import { useParams } from "react-router-dom";
+
 import Button from "react-bootstrap/Button";
 import Form from "./Form";
 //import "./Review.css";
@@ -8,9 +11,12 @@ import Form from "./Form";
 function Review() {
   const [reviewData, setReviewData] = useState({});
   const [title, setTitle] = useState({});
-
+  const params = useParams();
+  console.log(params);
+  const movieID = params.movieId;
+  console.log("The movie ID is ", movieID);
   useEffect(() => {
-    const titleUrl = `https://graceful-hoodie-deer.cyclic.app/title/tt1535109`;
+    const titleUrl = `https://graceful-hoodie-deer.cyclic.app/title/${movieID}`;
     fetch(titleUrl)
       .then((res) => res.json())
       .then((data) => {
@@ -20,7 +26,7 @@ function Review() {
   }, []);
 
   useEffect(() => {
-    const reviewUrl = `https://graceful-hoodie-deer.cyclic.app/review/find/tt1535109`;
+    const reviewUrl = `https://graceful-hoodie-deer.cyclic.app/review/find/${movieID}`;
     fetch(reviewUrl)
       .then((res) => res.json())
       .then((data) => {
@@ -70,13 +76,16 @@ function Review() {
     setReviewData(copyReviewData);
 
     // This will send a post request to update the data in the database
-    await fetch("https://graceful-hoodie-deer.cyclic.app/review/update/tt1535109", {
-      method: "PUT",
-      body: JSON.stringify(copyReviewData.items),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    await fetch(
+      `https://graceful-hoodie-deer.cyclic.app/review/update/${movieID}`,
+      {
+        method: "PUT",
+        body: JSON.stringify(copyReviewData.items),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
   };
 
   return (
@@ -95,7 +104,7 @@ function Review() {
       </nav>
       <div className="container">
         <div className="section">
-          <img src={title.image} />
+          <img src={title.image} alt="not loaded" />
         </div>
         <div className="section">
           <div className="subsection">
