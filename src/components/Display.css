@@ -5,6 +5,10 @@
     flex-wrap: wrap;
 
 }
+.reviewButton {
+    position: relative;
+    bottom: 0.2rem
+}
 .result {
     display: block;
     height: auto;
