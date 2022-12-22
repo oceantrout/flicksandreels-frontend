@@ -25,7 +25,7 @@ function Admin() {
     };
 
     fetch(
-      `http://localhost:3000/review/delete/tt1535109/${username}`,
+      `https://graceful-hoodie-deer.cyclic.app/review/delete/tt1535109/${username}`,
       requestOptions
     )
       .then((response) => response.text())
