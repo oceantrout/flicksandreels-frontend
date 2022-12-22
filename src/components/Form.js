@@ -6,6 +6,7 @@ function Form(props) {
   const [descriptionInput, setDescriptionInput] = useState("");
   const [reviewInput, setReviewInput] = useState("");
   const [uid, setUid] = useLocalStorage("UID");
+  let clientTime = new Date().toLocaleString();
 
   const handleUsernameInput = (event) => {
     setUsernameInput(event.target.value);
@@ -24,6 +25,7 @@ function Form(props) {
     const val = {
       username: usernameInput,
       heading: descriptionInput,
+      date: clientTime,
       content: reviewInput,
     }; // Getting the value from the state
     console.log("STATE: formInput:", val);
