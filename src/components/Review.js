@@ -71,6 +71,7 @@ function Review() {
   };
 
   const handleSubmitFromChild = async (val) => {
+    let clientTime = new Date().toLocaleString();
     console.log("This is from child " + val);
     let copyReviewData = { ...reviewData }; // Need to clone data when you want to change the state
     copyReviewData.items.push(val);
@@ -92,6 +93,12 @@ function Review() {
 
     var raw = JSON.stringify({
       username: val.username,
+      userUrl: reviewData.items[0].userUrl,
+      reviewLink: reviewData.items[0].reviewLink,
+      warningSpoilers: reviewData.items[0].warningSpoilers,
+      date: clientTime,
+      rate: reviewData.items[0].rate,
+      helpful: reviewData.items[0].helpful,
       heading: val.heading,
       content: val.content,
     });

@@ -1,0 +1,41 @@
+{
+"_id": "6392acac7eea6b0596da7587",
+"movieId": "tt3224458",
+"title": "A Beautiful Day in the Neighborhood",
+"items": [
+{
+"_id": "63a427b3a9b13112c29170dc",
+"username": "Vic_max",
+"userUrl": "https://www.imdb.com/user/ur5146276",
+"reviewLink": "https://www.imdb.com/review/rw5275045",
+"warningSpoilers": "false",
+"date": "23 November 2019",
+"rate": "",
+"helpful": "186 out of 204 found this helpful.",
+"heading": "Indirectly about Mr. Rogers",
+"content": "The movie is loosely based on Tom Junod's life around 1998 when he wrote an article on Mr. Rogers for Esquire magazine.It's interesting because the journalist, named Lloyd Vogel in the movie, is introduced as a harsh cynic who's notorious for shredding the character of the people he writes about. Mr. Rogers, fully aware of this, still invites him into his world.Here, Vogel is actually the subject of the movie ... and Mr. Rogers is the enigmatic subject of the article he's writing. You don't get too much insight on Rogers himself but you do get a feel for how he affected people and why.If you're interested on learning more about Rogers, see the documentary \"Won't You Be My Neighbor\" (2018). You'll get more of a feel for who he is. But if you're in the mood for a touching story from his life, this is a good one to see."
+},
+{
+"_id": "63a427b3a9b13112c29170dd",
+"username": "CriticalOfEverything",
+"userUrl": "https://www.imdb.com/user/ur86636713",
+"reviewLink": "https://www.imdb.com/review/rw5452234",
+"warningSpoilers": "false",
+"date": "1 February 2020",
+"rate": "10",
+"helpful": "341 out of 366 found this helpful.",
+"heading": "The first film I've seen in years that has deeply affected me.",
+"content": "This may get a little personal, but I've been suffering from severe depression and have had a lot of issues dealing with anger, sadness and all for about five years now. For the past 8 years of my life, and earlier years of my childhood, I have loved Fred Rogers. He always told me and millions of children all over the world that he likes us just the way we are, and taught us the power of kindness, positive ways of thinking and dealing with our emotions, and while I'll always be a cynic by nature, I've always tried to take what he taught me and many others to heart. He was genuinely the kindest, most loving and compassionate human being to ever grace this Earth. But over the past year especially, I've stopped caring about my life with tragedy happening around me constantly, making me feel like my life was falling apart, as well as me having thoughts of suicide. I always put Mr Rogers on to give me some kind of motivation to keep going, but his messages that once resonated so deeply with me began to fade as I slipped further and further away from being \"fine\". I've gotten a lot better over the past few months though, not perfect but still, and when I heard that a movie starring Tom Hanks as Mr Rogers was being made I did all that I could to see it as fast as possible when it finally came out in the UK (which as of writing this, was yesterday).The second this film started, the moment Hanks appeared and the music came on, I just completely melted. I almost audibly broke down into tears, but not with sadness, with joy and relief. I knew I was in for something that would grip me. This film is amazing. It focuses on the psychological healing and betterment of the protagonist, Lloyd, as Mr Rogers taps into his childhood and his feelings, the same way he tapped into the feelings of children back when his show was still on the air and back when I watched it a decade ago, and we get a powerful, touching tribute to this man and the impact he had on so many lives. Lloyd himself was not only well acted, but for me anyway I saw a bit of myself in him. Things like his strained relations with family, his overwhelming and blinding cynicism and his anger management are all things I dealt with at some point and still deal with today. So when the film took this character and and put him on this emotional journey to betterment and healing, it resonated so deeply with me that I began to feel as if I was a kid again, watching Rogers as he taught me how to deal with my own anger and to prioritise kindness, and for many people who saw this film, I feel like they experienced the same thing I did. And that's why this movie is so good. It has the same impact and kind-heartedness as Rogers' original show, but turned into an emotional, thoughtful and touching feature-length film that acts as the perfect tribute to Fred's legacy and life. At the end of the day though, the film, while an amazing tribute to Fred, isn't entirely about him. It's about how he saved the life of Lloyd, became one of his closest friends, and helped him heal his psychological wounds. And the perfect way to put this film is this: It's a film that celebrates the messages, kindness and life of Mr Rogers, that acts as a way to show the impact that he had on so many lives, and despite him not being in the film as much as Lloyd, who is the main protagonist of the film, his impact is felt throughout its entire runtime and in every single scene.Other things as well, the blending of the old Mr Rogers sets with locations in the film was very creative and touching, the acting, especially from Hanks was incredible, the film was perfectly paced and while the score isn't anything to talk about, the parts that do use music are done very well and capture the feel of the scene. The editing might've been a little iffy at points, but that was mainly at the beginning of the film. Overall, it's probably my favourite movie of 2019, even if I did have to wait until 2020 to watch it. If you have not watched it yet, please do. It's absolutely phenomenal."
+},
+{
+"_id": "63a427b3a9b13112c29170de",
+"username": "planktonrules",
+"userUrl": "https://www.imdb.com/user/ur2467618",
+"reviewLink": "https://www.imdb.com/review/rw5717941",
+"warningSpoilers": "false",
+"date": "8 May 2020",
+"rate": "9",
+"helpful": "35 out of 41 found this helpful.",
+"heading": "Very intelligently crafted....just make sure you have some Kleenex nearby!",
+"content": "I should warn you about \"A Beautiful Day in the Neighborhood\", the film might be difficult for some viewers. This is because the story is about a troubled relationship between a man and his father...and it may trigger a lot of personal issues for you as well. Now I am NOT saying don't watch it....just be prepared that it might just be tough for you if you are struggling with these sorts of personal issues. And, you might want to have some Kleenex nearby...and perhaps a loved one as well. The story is not a biopic about Fred Rogers...though he is a major player in the story. Instead, it's a nice story about a reporter who has daddy issues....and his encounters with Rogers did a lot to change his life. At first, they met so that he could write a magazine article about Rogers...but they became friends during this process and Rogers had a huge impact on his life.The acting and writing are great. Perhaps even better is the direction and script...they are marvelous and it sure shows as you watch this touching movie. Overall, a really effective and terrific story...one you will no doubt enjoy."
+}
