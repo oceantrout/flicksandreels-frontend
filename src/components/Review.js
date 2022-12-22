@@ -76,17 +76,40 @@ function Review() {
     copyReviewData.items.push(val);
     setReviewData(copyReviewData);
 
-    // This will send a post request to update the data in the database
+    // // This will send a post request to update the data in the database
+    // await fetch(
+    //   `https://graceful-hoodie-deer.cyclic.app/review/update/${movieID}`,
+    //   {
+    //     method: "PUT",
+    //     body: JSON.stringify(copyReviewData.items),
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   }
+    // );
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      username: val.username,
+      heading: val.heading,
+      content: val.content,
+    });
+
+    var requestOptions = {
+      method: "PUT",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
     await fetch(
       `https://graceful-hoodie-deer.cyclic.app/review/update/${movieID}`,
-      {
-        method: "PUT",
-        body: JSON.stringify(copyReviewData.items),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
   };
 
   return (
