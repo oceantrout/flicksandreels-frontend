@@ -63,6 +63,9 @@ function Review() {
               truncatedEndingComponent={"... "}
             >
               {review.content}
+              <br></br>
+              <a>Date: </a>
+              {review.date}
             </ShowMoreText>
           </p>
         </div>
