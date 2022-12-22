@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ShowMoreText from "react-show-more-text";
-import { useLocalStorage } from "@har4s/use-local-storage";
+//import { useLocalStorage } from "@har4s/use-local-storage";
 import { useParams } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
@@ -98,6 +98,9 @@ function Review() {
         </Link>
         <Link to="/Popular">
           <Button variant="info">Popular</Button>
+        </Link>
+        <Link to="/Admin">
+          <Button variant="secondary">Admin Access</Button>
         </Link>
         {/* <Button variant="warning" onClick={handleSignOut}>
           Sign Out{" "}

@@ -6,6 +6,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Popular from "./components/Popular";
 import Review from "./components/Review";
+import Admin from "./components/Admin";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Route, Switch } from "react-router-dom";
@@ -51,6 +52,9 @@ function App() {
       </Route>
       <Route path="/Review/:movieId">
         <Review />
+      </Route>
+      <Route path="/Admin">
+        <Admin />
       </Route>
     </Switch>
   );
