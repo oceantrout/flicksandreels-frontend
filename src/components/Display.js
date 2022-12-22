@@ -27,7 +27,9 @@ function Display() {
     };
 
     if (window.localStorage.getItem("UID") === "null") {
-      window.alert("You have no access");
+      window.alert(
+        "You have no access or you have input the wrong password or ID"
+      );
       setMovieData([]);
       setTimeout(() => {
         history.push("./");

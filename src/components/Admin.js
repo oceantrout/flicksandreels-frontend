@@ -1,14 +1,16 @@
 import { React, useEffect, useState } from "react";
-//import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
 import "./Admin.css";
 
 function Admin() {
   const [reviewData, setReviewData] = useState([]);
-
+  const params = useParams();
+  let movieID = params.movieId;
+  console.log("movieID from Admin params", movieID);
   useEffect(() => {
-    const reviewUrl = `https://graceful-hoodie-deer.cyclic.app/review/find/tt1535109`;
+    const reviewUrl = `https://graceful-hoodie-deer.cyclic.app/review/find/${movieID}`;
     fetch(reviewUrl)
       .then((res) => res.json())
       .then((Data) => {
@@ -25,11 +27,15 @@ function Admin() {
     };
 
     fetch(
-      `https://graceful-hoodie-deer.cyclic.app/review/delete/tt1535109/${username}`,
+      `https://graceful-hoodie-deer.cyclic.app/review/delete/${movieID}/${username}`,
       requestOptions
     )
       .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((result) => {
+        console.log(result);
+        alert("user review is deleted");
+        window.location.reload(false);
+      })
       .catch((error) => console.log("error", error));
   };
 
@@ -40,7 +46,14 @@ function Admin() {
         <td>{item.heading}</td>
         <td>{item.content}</td>
 
-        <Button onClick={handleClick(item.username)}>Delete</Button>
+        <Button
+          size="sm"
+          onClick={() => {
+            handleClick(item.username);
+          }}
+        >
+          Delete
+        </Button>
       </tr>
     );
   });

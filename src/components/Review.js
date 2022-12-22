@@ -1,8 +1,9 @@
 import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ShowMoreText from "react-show-more-text";
-//import { useLocalStorage } from "@har4s/use-local-storage";
+import { useLocalStorage } from "@har4s/use-local-storage";
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
 import Form from "./Form";
@@ -11,7 +12,11 @@ import Form from "./Form";
 function Review() {
   const [reviewData, setReviewData] = useState({});
   const [title, setTitle] = useState({});
+  const [uid, setUid] = useLocalStorage("UID");
   const params = useParams();
+  let history = useHistory();
+  let clientTime = new Date().toLocaleString();
+
   console.log(params);
   const movieID = params.movieId;
   console.log("The movie ID is ", movieID);
@@ -63,6 +68,9 @@ function Review() {
               truncatedEndingComponent={"... "}
             >
               {review.content}
+              <br></br>
+              <a>Date: </a>
+              {review.date}
             </ShowMoreText>
           </p>
         </div>
@@ -71,45 +79,52 @@ function Review() {
   };
 
   const handleSubmitFromChild = async (val) => {
+    let clientTime = new Date().toLocaleString();
     console.log("This is from child " + val);
     let copyReviewData = { ...reviewData }; // Need to clone data when you want to change the state
     copyReviewData.items.push(val);
     setReviewData(copyReviewData);
 
-    // // This will send a post request to update the data in the database
-    // await fetch(
-    //   `https://graceful-hoodie-deer.cyclic.app/review/update/${movieID}`,
-    //   {
-    //     method: "PUT",
-    //     body: JSON.stringify(copyReviewData.items),
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   }
-    // );
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    var raw = JSON.stringify({
-      username: val.username,
-      heading: val.heading,
-      content: val.content,
-    });
-
-    var requestOptions = {
-      method: "PUT",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow",
-    };
-
+    // This will send a post request to update the data in the database
     await fetch(
       `https://graceful-hoodie-deer.cyclic.app/review/update/${movieID}`,
-      requestOptions
-    )
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.log("error", error));
+      {
+        method: "PUT",
+        body: JSON.stringify(val),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    //   var myHeaders = new Headers();
+    //   myHeaders.append("Content-Type", "application/json");
+
+    //   var raw = JSON.stringify({
+    //     username: val.username,
+    //     userUrl: reviewData.items[0].userUrl,
+    //     reviewLink: reviewData.items[0].reviewLink,
+    //     warningSpoilers: reviewData.items[0].warningSpoilers,
+    //     date: clientTime,
+    //     rate: reviewData.items[0].rate,
+    //     helpful: reviewData.items[0].helpful,
+    //     heading: val.heading,
+    //     content: val.content,
+    //   });
+
+    //   var requestOptions = {
+    //     method: "PUT",
+    //     headers: myHeaders,
+    //     body: raw,
+    //     redirect: "follow",
+    //   };
+
+    //   await fetch(
+    //     `https://graceful-hoodie-deer.cyclic.app/review/update/${movieID}`,
+    //     requestOptions
+    //   )
+    //     .then((response) => response.text())
+    //     .then((result) => console.log(result))
+    //     .catch((error) => console.log("error", error));
   };
 
   return (
@@ -122,13 +137,28 @@ function Review() {
         <Link to="/Popular">
           <Button variant="info">Popular</Button>
         </Link>
-        <Link to="/Admin">
-          <Button variant="secondary">Admin Access</Button>
-        </Link>
+        <Button
+          onClick={() => {
+            if (uid === "banana@gmail.com") {
+              history.push(`/${movieID}/Admin`);
+            } else {
+              alert("You don't have admin access");
+              return;
+            }
+          }}
+          variant="danger"
+        >
+          Admin Access
+        </Button>
         {/* <Button variant="warning" onClick={handleSignOut}>
           Sign Out{" "}
         </Button> */}
       </nav>
+      <br></br>
+      <span>
+        Currentl logged user: {uid}, {clientTime}
+      </span>
+      <br></br>
       <div className="container">
         <div className="section">
           <img src={title.image} alt="not loaded" />

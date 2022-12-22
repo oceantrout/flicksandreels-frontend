@@ -53,7 +53,7 @@ function App() {
       <Route path="/Review/:movieId">
         <Review />
       </Route>
-      <Route path="/Admin">
+      <Route path="/:movieId/Admin">
         <Admin />
       </Route>
     </Switch>
