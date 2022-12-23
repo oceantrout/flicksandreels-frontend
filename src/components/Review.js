@@ -56,6 +56,7 @@ function Review() {
           <h6>
             <em>"{review.heading}"</em>
           </h6>
+          <a>Posted on {review.date} </a>   
           <p>
             <ShowMoreText
               lines={3}
@@ -68,9 +69,6 @@ function Review() {
               truncatedEndingComponent={"... "}
             >
               {review.content}
-              <br></br>
-              <a>Date: </a>
-              {review.date}
             </ShowMoreText>
           </p>
         </div>
@@ -79,7 +77,7 @@ function Review() {
   };
 
   const handleSubmitFromChild = async (val) => {
-    let clientTime = new Date().toLocaleString();
+    // let clientTime = new Date().toLocaleString()
     console.log("This is from child " + val);
     let copyReviewData = { ...reviewData }; // Need to clone data when you want to change the state
     copyReviewData.items.push(val);
@@ -156,7 +154,7 @@ function Review() {
       </nav>
       <br></br>
       <span>
-        Currentl logged user: {uid}, {clientTime}
+        Current logged user: {uid}, {clientTime}
       </span>
       <br></br>
       <div className="container">
