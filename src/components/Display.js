@@ -93,7 +93,7 @@ function Display() {
     <>
       <h2>Movies for review </h2>
       <span>
-        Currentl logged user: {uid}, {clientTime}
+        Current logged user: {uid}, {clientTime}
       </span>
       <nav>
         <Link to="/">

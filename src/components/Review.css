@@ -1,27 +1,47 @@
 .container{
     display: flex;
+    align-items: stretch;
 }
 
 p {
-    font-size: 12px;
+    font-size: 14px;
+    text-align: left;
 }
 
 .section {
-    margin: 1em;
+    margin: 0.5em;
     padding: 0.5em;
     display: block;
 }
 
 h6 {
     font-size: 16px;
+    text-align: left;
 }
 
-.review-img {
-    width: 400px;
+img {
+    width: 500px;
     height: auto;
-    text-align: center;
+    text-align: left;
 }
 
 .subsection {
     margin: 1em;
+    padding: 0.5em;
+    /* border-style: solid;
+    border-radius: 5px; */
+}
+
+.form {
+    margin: 1em;
+    padding: 1em;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.review {
+    margin: 1em;
+    padding: 0.5em;
+    border-style: solid;
+    border-radius: 5px;
 }

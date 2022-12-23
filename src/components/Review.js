@@ -6,8 +6,8 @@ import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
-import Form from "./Form";
-//import "./Review.css";
+import ReviewForm from "./ReviewForm";
+import "./Review.css";
 
 function Review() {
   const [reviewData, setReviewData] = useState({});
@@ -49,14 +49,14 @@ function Review() {
     console.log("I am being rendered ", reviewData.items.length);
     return reviewData.items.map((review, index) => {
       return (
-        <div>
+        <div className="review">
           <h6>
             <strong>{review.username}</strong>
           </h6>
           <h6>
             <em>"{review.heading}"</em>
           </h6>
-          <a>Posted on {review.date} </a>   
+          <h6>Posted on {review.date} </h6>   
           <p>
             <ShowMoreText
               lines={3}
@@ -71,6 +71,7 @@ function Review() {
               {review.content}
             </ShowMoreText>
           </p>
+          <br/>
         </div>
       );
     });
@@ -168,11 +169,14 @@ function Review() {
             </h1>
             <h5>{title.plot}</h5>
           </div>
+          <br/>
           <div className="subsection">
-            <h4>Reviews</h4>
+            <h4><strong>Reviews</strong></h4>
             {reviewData?.items?.length > 0 ? <ReviewResult /> : null}
-            <h4>Add a Review</h4>
-            <Form onHandleSubmit={handleSubmitFromChild} />
+            <div className="form">
+              <h4><strong>Add a Review</strong></h4>
+              <ReviewForm onHandleSubmit={handleSubmitFromChild} />
+            </div>
           </div>
         </div>
       </div>
