@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
-import ReviewForm from "./ReviewForm";
+import Form from "./ReviewForm";
 import "./Review.css";
 
 function Review() {
@@ -49,14 +49,13 @@ function Review() {
     console.log("I am being rendered ", reviewData.items.length);
     return reviewData.items.map((review, index) => {
       return (
-        <div className="review">
+        <div>
           <h6>
             <strong>{review.username}</strong>
           </h6>
           <h6>
             <em>"{review.heading}"</em>
           </h6>
-          <h6>Posted on {review.date} </h6>   
           <p>
             <ShowMoreText
               lines={3}
@@ -69,16 +68,17 @@ function Review() {
               truncatedEndingComponent={"... "}
             >
               {review.content}
+              <br></br>
+              <a>Date: </a>
+              {review.date}
             </ShowMoreText>
           </p>
-          <br/>
         </div>
       );
     });
   };
 
   const handleSubmitFromChild = async (val) => {
-    // let clientTime = new Date().toLocaleString()
     console.log("This is from child " + val);
     let copyReviewData = { ...reviewData }; // Need to clone data when you want to change the state
     copyReviewData.items.push(val);
@@ -155,12 +155,12 @@ function Review() {
       </nav>
       <br></br>
       <span>
-        Current logged user: {uid}, {clientTime}
+        Currentl logged user: {uid}, {clientTime}
       </span>
       <br></br>
       <div className="container">
         <div className="section">
-          <img src={title.image} alt="not loaded" />
+          <img className="review-img" src={title.image} alt="not loaded" />
         </div>
         <div className="section">
           <div className="subsection">
@@ -169,14 +169,11 @@ function Review() {
             </h1>
             <h5>{title.plot}</h5>
           </div>
-          <br/>
           <div className="subsection">
-            <h4><strong>Reviews</strong></h4>
+            <h4>Reviews</h4>
             {reviewData?.items?.length > 0 ? <ReviewResult /> : null}
-            <div className="form">
-              <h4><strong>Add a Review</strong></h4>
-              <ReviewForm onHandleSubmit={handleSubmitFromChild} />
-            </div>
+            <h4>Add a Review</h4>
+            <Form onHandleSubmit={handleSubmitFromChild} />
           </div>
         </div>
       </div>
